@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="home">
+
+	<div data-role="header">
+		<h1>Mayflower - Add Poll</h1>
+		<div data-role="navbar">
+			<ul>
+				<a href="#home" class="ui-button">Polls</a>
+			</ul>
+		</div>
+	</div
+
+	<div data-role="content">
+		<form>
+			<div class="ui-field-contain">
+	    		<label for="select-native-2">Type of Graph:</label>
+	    		<select name="select-native-2" id="select-native-2" data-mini="true">
+	        		<option value="1">Pie</option>
+	        		<option value="2">Bar</option>
+	    		</select>
+			</div>
+		</form>
+		<div data-role="fieldcontain">
+    		<label for="name">Question:</label>
+    		<input type="text" name="name" id="name" value=""  />
+		</div>
+		<div data-role="fieldcontain">
+    		<label for="name">Answer 1:</label>
+    		<input type="text" name="name" id="name" value=""  />
+		</div>
+		<div data-role="fieldcontain">
+    		<label for="name">Answer 2:</label>
+    		<input type="text" name="name" id="name" value=""  />
+		</div>
+		<div data-role="controlgroup" data-type="horizontal">
+		<a data-role="button">Add New Answer</a>
+		<a data-role="button">Initiate Poll</a>
+		</div>
+</div>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Austin -> NYC Summer '16</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="contacts">
+	<div data-role="header">
+		<h1>Contact Page! </h1>
+		<div data-role="navbar">
+			<ul>
+				<a href="http://google.com">Google</a>
+				<a href="#contacts" class="ui-button">Contacts</a>
+				<a href="#home" class="ui-button">Home</a>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content">
+	</div>
+</div>
+
+</body>
+</html>
