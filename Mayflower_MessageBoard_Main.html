@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ship Diary</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<style>
+	</style>
+</head>
+<script type = "text/javascript">
+
+</script>
+<body>
+
+<div data-role="page" id="home">
+
+	<div data-role="header">
+		<h1>Mayflower - Ship Diary</h1>
+		<div data-role="navbar">
+			<ul>
+				<a href="#home" class="ui-button">Home</a>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="content">
+
+		<!-- <p>Page content goes here.</p> -->
+		<div data-role="collapsible" data-theme="a" data-content-theme="a">
+   			<h3>Meet your Shipmates!</h3>
+   			<a data-role="button" id = "posts">Add Post</a>
+   			<div data-role="collapsible" data-content-theme="e">
+   				<h3> Babz loves you all! </h3>
+   				<p> <i> Babz G. writes.. </i> Hi friends, the name is Babz. I have a poodle named Monkey. Can't wait to meet all of you when I move in a month! </p>
+   				<br>
+   				<p> <i> Adam S. writes.. </i> No way, I have a poodle too! Do you know of any good dog parks? </p>
+   				<a data-role="button" id = "reply1">Post Reply</a>
+   			</div>
+   			<div data-role="collapsible" data-content-theme="e">
+   				<h3> Anyone else living in a shoebox? </h3>
+   				<p> <i> Christie B. writes.. </i> Hey everyone, I'm Christie! Hopefully I'll be able to meet some of you. I'm really disappointed with my apartment. Way smaller than what I thought it would be like on Craiglist.. </p>
+   				<br>
+   				<p> <i> Adam S. writes.. </i> I KNOW. ME TOO. At least you don't have a shared bathroom..</p>
+   				<br> 
+   				<p> <i> Serena B. writes.. </i> Absolute filth.</p>
+   				<a data-role="button" id = "reply2">Post Reply</a>
+   			</div>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+   			<h3>Moving Logistics</h3>
+   			<a data-role="button" id = "postm">Add Post</a>
+   			<div data-role="collapsible" data-content-theme="e">
+   				<h3>Mover Recommendations? </h3>
+   				<p> <i> Babz G. writes.. </i> I'M BACK!!! Is QuikMover any good? Total procrastinator right here... </p>
+   				<br>
+   				<p> <i> Donny Y. writes.. </i> Nah I would use FastMove </p>
+   				<a data-role="button" id = "reply3">Post Reply</a>
+   			</div>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+   			<h3>Potential Meetups</h3>
+   			<a data-role="button" id = "postp">Add Post</a>
+   			<div data-role="collapsible" data-content-theme="e">
+   				<h3> Froyo anyone? </h3>
+   				<p> <i> Babz G. writes.. </i> I really can't wait to meet you all!!! I love froyo (lol). Does anyone know good places for froyo?  </p>
+   				<br>
+   				<p> <i> Donny Y. writes.. </i> I think Pinkberry is pretty generic, but you can make a poll to see what people like before creating a meetup event </p>
+   				<br>
+   				<p> <i> Babz G. writes.. </i> Thanks Donny, I'll do that. Can't wait to meet you! :) </p>
+   				<br>
+   				<a data-role="button" id = "reply4">Post Reply</a>
+   			</div>
+		</div>
+		<div data-role="collapsible" data-theme="c">
+   			<h3>Neighborhood Questions</h3>
+   			<a data-role="button" id = "postn">Add Post</a>
+   			<div data-role="collapsible" data-content-theme="e">
+   				<h3> How safe is Washington Heights? </h3>
+   				<p> <i> Tuongvan L. writes.. </i> I'm thinking of moving to the area and found a pretty good deal. Do you think it's safe enough? I'm in finance and work late nights, huhu.  </p>
+   				<br>
+   				<p> <i> Amanda B. writes.. </i> AVOID AT ALL COSTS.  </p>
+   				<br>
+   				<p> <i> Monica M. writes.. </i>  Totally disagree. I think it really has gone through gentrification in the past couple of years while maintaining its rich cultural roots to the Dominican community. You can check out crime rates online and see the decline. Amanda's a big wimp.  </p>
+   				<br>
+   				<p> <i> Amanda B. writes.. </i> :( </p>
+   				<a data-role="button" id = "reply5">Post Reply</a>
+   			</div>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+   			<h3>Miscellaneous</h3>
+   			<p>No posts here! Maybe you should add one :) </p>
+   			<a data-role="button" id = "postmi">Add Post</a>
+		</div>
+		<div data-role="collapsible" data-theme="b" data-content-theme="b">
+   		<h3>Your Posts</h3>
+  		 <p>You have no posts yet!</p>
+		</div>
+
+		
+		<br />
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Austin -> NYC Summer '16</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="contacts">
+	<div data-role="header">
+		<h1>Contact Page! </h1>
+		<div data-role="navbar">
+			<ul>
+				<a href="http://google.com">Google</a>
+				<a href="#contacts" class="ui-button">Contacts</a>
+				<a href="#home" class="ui-button">Home</a>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content">
+	</div>
+</div>
+
+</body>
+</html>
