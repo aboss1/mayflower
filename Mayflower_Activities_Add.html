@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 </head>
 <body>
 <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css"/> 
@@ -27,43 +28,62 @@
 	</div
 
 	<div data-role="content">
-		<div data-role="fieldcontain">
-    		<label for="name">Event Title:</label>
-    		<input type="text" name="name" id="name" value=""  />
-		</div>
-		<div data-role="fieldcontain">
-			<label for="textarea">Event Description:</label>
-			<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-		</div>
-		<div data-role="fieldcontain">
-    		<label for="date">Date:</label>
-			<input type="date" name="date" id="date" value=""  />
-		</div>
-		<div data-role="fieldcontain">
-			    <label for="time">Time:</label>
-			    <input type="time" data-clear-btn="true" id="time" value="" />
-		</div>
-		<div data-role="controlgroup" data-type="horizontal">
-		<a data-role="button">Add Event</a>
-		</div>
+		<div data-role="main" class="ui-content">
+    		<form method="post" action="Mayflower_Activities_Main.html">
+     			<div class="ui-field-contain">
+		        <label for="name">Event Title:</label>
+		        <input type="text" name="name" class="stored" id="name">       
+		        
+		        <label for="eventDescription">Event Description:</label>
+		        <input type = "text" name="eventDescription" class = "stored" id="eventDescription">
+		        
+		        <label for="date">Date:</label>
+		        <input type="date" name="date" class = "stored" id="date">
+		        
+		        <label for="time">Time:</label>
+		        <input type="text" name="time" class = "stored" id="time" 
+		        
+		        <fieldset data-role="controlgroup">
+			        <label for="joinbutton">Add Join Button?</label>
+			        <input type="checkbox" name="joinbutton" class = "stored"id="joinbutton">
+    			</fieldset>
+		      </div>
+		      <input type="submit" data-inline="true" value="Add Event">
+		      </div>
+		    </form>
+  		</div>
+		
 	<div data-role="footer">
 		<h4>Austin -> NYC Summer '16</h4>
-	</div><!-- /footer -->
-</div>
-<div data-role="page" id="contacts">
-	<div data-role="header">
-		<h1>Contact Page! </h1>
-		<div data-role="navbar">
-			<ul>
-				<a href="http://google.com">Google</a>
-				<a href="#contacts" class="ui-button">Contacts</a>
-				<a href="#home" class="ui-button">Home</a>
-			</ul>
-		</div>
-	</div>
-	<div data-role="content">
 	</div>
 </div>
+<!-- http://www.thomashardy.me.uk/using-html5-localstorage-on-a-form for this function -->
+<script type = "text/javascript">
+$(document).ready(function () {
+    function init() {
+        if (localStorage["name"]) {
+            $('#name').val(localStorage["name"]);
+        }
+        if (localStorage["eventDescription"]) {
+            $('#eventDescription').val(localStorage["eventDescription"]);
+        }
+        if (localStorage["date"]) {
+            $('#date').val(localStorage["date"]);
+        }
+        if (localStorage["time"]) {
+            $('#time').val(localStorage["time"]);
+        }
 
+        if (localStorage["joinbutton"]) {
+        	$('#joinbutton').val(localStorage["joinbutton"]);
+        }
+    }
+    init();
+});
+
+$('.stored').change(function () {
+    localStorage[$(this).attr('name')] = $(this).val();
+});
+</script>
 </body>
 </html>

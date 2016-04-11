@@ -12,3 +12,6 @@ Mayflower directly benefits users by creating a commonly known type of social gr
 
 ##Target Population
 Our target population consists of adults (in addition to retired adults) who are planning on making a move to a metropolitan area. Our target population is primarily focused on adults who are moving by themselves, although Mayflower is applicable for young families looking to connect with others in similar situations. 
+
+#Sources
+http://www.thomashardy.me.uk/using-html5-localstorage-on-a-form <-- used for saving form submissions in LocalStorage
