@@ -10,6 +10,81 @@
 	</style>
 </head>
 <script type = "text/javascript">
+$(document).ready(function() {
+
+$("#shipmates1").submit(function() {
+   var title = $("#un").val();
+   var content = $("#pw").val();
+   addContent("shipmates", title, content); 
+   return false;
+})
+
+$("#pmeetups1").submit(function() {
+   var title = $("#un2").val();
+   var content = $("#pw2").val();
+   addContent("pmeetups", title, content); 
+   return false;
+})
+
+$("#moving1").submit(function() {
+   var title = $("#un1").val();
+   var content = $("#pw1").val();
+   addContent("moving", title, content); 
+   return false;
+})
+
+$("#neighbor1").submit(function() {
+   var title = $("#un3").val();
+   var content = $("#pw3").val();
+   addContent("neighbor", title, content); 
+   return false;
+})
+
+$("#misc1").submit(function() {
+   var title = $("#un4").val();
+   var content = $("#pw4").val();
+   addContent("misc", title, content); 
+   return false;
+})
+
+
+
+})
+
+$.fn.clearForm = function() {
+  return this.each(function() {
+    var type = this.type, tag = this.tagName.toLowerCase();
+    if (tag == 'form')
+      return $(':input',this).clearForm();
+    if (type == 'text' || type == 'password' || tag == 'textarea')
+      this.value = '';
+    else if (type == 'checkbox' || type == 'radio')
+      this.checked = false;
+    else if (tag == 'select')
+      this.selectedIndex = -1;
+  });
+};
+
+function addContent(parentName, titleName, messageInfo) {
+   var add = document.getElementById("" + parentName + "");
+   var newdiv = document.createElement('div');
+   var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+   var uniqid = randLetter + Date.now();
+   newdiv.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + "><h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + "</p></div>";
+   var id = $(newdiv).find("div").attr('id');
+   console.log(id);
+   add.appendChild(newdiv);
+   $("#" + id ).trigger('create');
+   $('div[data-role=collapsible]').collapsible();
+   var newdiv2 = document.createElement('div');
+   newdiv2.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + "><h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + "</p></div>";
+   var newid = $(newdiv2).find("div").attr('id');
+   var posts = document.getElementById("yourposts");
+   posts.appendChild(newdiv2);
+   $("#" + newid ).trigger('create');
+   $('div[data-role=collapsible]').collapsible();
+
+}
 
 </script>
 <body>
@@ -30,7 +105,19 @@
 		<!-- <p>Page content goes here.</p> -->
 		<div data-role="collapsible" data-theme="a" data-content-theme="a">
    			<h3>Meet your Shipmates!</h3>
-   			<a data-role="button" id = "posts">Add Post</a>
+            <div id = "shipmates">
+   			<a href="#popupInfo" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
+               <div data-role="popup" data-theme = "c" style= "max-width:400px" class="ui-corner-all" id = "popupInfo">
+                  <form id = "shipmates1" class = "addpost">
+                     <h3>Create a New Post</h3>
+                      <label for="un">Name of Post:</label>
+                     <input type="text" id="un" value="" placeholder="" data-theme="a">
+                     <label for="pw" >Post Content:</label>
+                      <input type= "text" id="pw" value="" placeholder="" data-theme="a">
+                     <button type="submit" data-theme="b">Add Post</button>
+                  </form>
+
+               </div>
    			<div data-role="collapsible" data-content-theme="e">
    				<h3> Babz loves you all! </h3>
    				<p> <i> Babz G. writes.. </i> Hi friends, the name is Babz. I have a poodle named Monkey. Can't wait to meet all of you when I move in a month! </p>
@@ -47,10 +134,25 @@
    				<p> <i> Serena B. writes.. </i> Absolute filth.</p>
    				<a data-role="button" id = "reply2">Post Reply</a>
    			</div>
+         </div>
 		</div>
+
+
 		<div data-role="collapsible" data-content-theme="c">
    			<h3>Moving Logistics</h3>
-   			<a data-role="button" id = "postm">Add Post</a>
+            <div id = "moving">
+            <a href="#popupInfo1" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
+   			<div data-role="popup" data-theme = "c" style= "max-width:400px" class="ui-corner-all" id = "popupInfo1">
+                  <form id = "moving1" class = "addpost">
+                     <h3>Create a New Post</h3>
+                      <label for="un1">Name of Post:</label>
+                     <input type="text" id="un1" value="" placeholder="" data-theme="a">
+                     <label for="pw1" >Post Content:</label>
+                      <input type= "text" id="pw1" value="" placeholder="" data-theme="a">
+                     <button type="submit" data-theme="b">Add Post</button>
+                  </form>
+
+               </div>
    			<div data-role="collapsible" data-content-theme="e">
    				<h3>Mover Recommendations? </h3>
    				<p> <i> Babz G. writes.. </i> I'M BACK!!! Is QuikMover any good? Total procrastinator right here... </p>
@@ -58,10 +160,26 @@
    				<p> <i> Donny Y. writes.. </i> Nah I would use FastMove </p>
    				<a data-role="button" id = "reply3">Post Reply</a>
    			</div>
+      </div>
 		</div>
+
+
+
 		<div data-role="collapsible" data-content-theme="c">
    			<h3>Potential Meetups</h3>
-   			<a data-role="button" id = "postp">Add Post</a>
+   			 <div id = "pmeetups">
+            <a href="#popupInfo2" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
+               <div data-role="popup" data-theme = "c" style= "max-width:400px" class="ui-corner-all" id = "popupInfo2">
+                  <form id = "pmeetups1" class = "addpost">
+                     <h3>Create a New Post</h3>
+                      <label for="un2">Name of Post:</label>
+                     <input type="text" id="un2" value="" placeholder="" data-theme="a">
+                     <label for="pw2" >Post Content:</label>
+                      <input type= "text" id="pw2" value="" placeholder="" data-theme="a">
+                     <button type="submit" data-theme="b" >Add Post</button>
+                  </form>
+
+               </div>
    			<div data-role="collapsible" data-content-theme="e">
    				<h3> Froyo anyone? </h3>
    				<p> <i> Babz G. writes.. </i> I really can't wait to meet you all!!! I love froyo (lol). Does anyone know good places for froyo?  </p>
@@ -73,9 +191,24 @@
    				<a data-role="button" id = "reply4">Post Reply</a>
    			</div>
 		</div>
+   </div>
+
+
 		<div data-role="collapsible" data-theme="c">
    			<h3>Neighborhood Questions</h3>
-   			<a data-role="button" id = "postn">Add Post</a>
+   			 <div id = "neighbor">
+            <a href="#popupInfo3" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
+               <div data-role="popup" data-theme = "c" style= "max-width:400px" class="ui-corner-all" id = "popupInfo3">
+                  <form id = "neighbor1" class = "addpost">
+                     <h3>Create a New Post</h3>
+                      <label for="un3">Name of Post:</label>
+                     <input type="text" id="un3" value="" placeholder="" data-theme="a">
+                     <label for="pw3" >Post Content:</label>
+                      <input type= "text" id="pw3" value="" placeholder="" data-theme="a">
+                     <button type="submit" data-theme="b" >Add Post</button>
+                  </form>
+
+               </div>
    			<div data-role="collapsible" data-content-theme="e">
    				<h3> How safe is Washington Heights? </h3>
    				<p> <i> Tuongvan L. writes.. </i> I'm thinking of moving to the area and found a pretty good deal. Do you think it's safe enough? I'm in finance and work late nights, huhu.  </p>
@@ -86,16 +219,36 @@
    				<br>
    				<p> <i> Amanda B. writes.. </i> :( </p>
    				<a data-role="button" id = "reply5">Post Reply</a>
-   			</div>
-		</div>
-		<div data-role="collapsible" data-content-theme="c">
+            </div>
+         </div>
+      </div>
+
+		<div data-role="collapsible" data-content-theme="c" >
    			<h3>Miscellaneous</h3>
    			<p>No posts here! Maybe you should add one :) </p>
-   			<a data-role="button" id = "postmi">Add Post</a>
+             <div id = "misc">
+            <a href="#popupInfo4" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
+               <div data-role="popup" data-theme = "c" style= "max-width:400px" class="ui-corner-all" id = "popupInfo4">
+                  <form id = "misc1" class = "addpost">
+                     <h3>Create a New Post</h3>
+                      <label for="un4">Name of Post:</label>
+                     <input type="text" id="un4" value="" placeholder="" data-theme="a">
+                     <label for="pw4" >Post Content:</label>
+                      <input type= "text" id="pw4" value="" placeholder="" data-theme="a">
+                     <button type="submit" data-theme="b" >Add Post</button>
+                  </form>
+               </div>
+            </div>
+         
 		</div>
+
+
 		<div data-role="collapsible" data-theme="b" data-content-theme="b">
    		<h3>Your Posts</h3>
   		 <p>You have no posts yet!</p>
+       <div id = "yourposts">
+
+       </div>
 		</div>
 
 		
@@ -108,20 +261,10 @@
 	</div><!-- /footer -->
 </div><!-- /page -->
 
-<div data-role="page" id="contacts">
+<div data-role="page" >
 	<div data-role="header">
-		<h1>Contact Page! </h1>
-		<div data-role="navbar">
-			<ul>
-				<a href="http://google.com">Google</a>
-				<a href="#contacts" class="ui-button">Contacts</a>
-				<a href="#home" class="ui-button">Home</a>
-			</ul>
-		</div>
-	</div>
 	<div data-role="content">
-	</div>
-</div>
+
 
 </body>
 </html>
