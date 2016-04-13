@@ -51,38 +51,47 @@ $("#misc1").submit(function() {
 
 })
 
-$.fn.clearForm = function() {
-  return this.each(function() {
-    var type = this.type, tag = this.tagName.toLowerCase();
-    if (tag == 'form')
-      return $(':input',this).clearForm();
-    if (type == 'text' || type == 'password' || tag == 'textarea')
-      this.value = '';
-    else if (type == 'checkbox' || type == 'radio')
-      this.checked = false;
-    else if (tag == 'select')
-      this.selectedIndex = -1;
-  });
-};
+function postReply(parentName) {
+  var cid; 
+  if(typeof parentName == "object") {
+    cid = parentName[0].id;
+  }
+  else  {
+    cid = parentName; 
+  }
+  console.log(cid);
+  $("#" + cid + "").find("button").remove();
+  $(this).remove();
+
+$('#' + cid + ' p').append($('<p> <i>Adam S. writes..</i> I agree! </p><buttononclick = "postReply(\'' +cid+'\')">Post Reply</button></div>')).trigger('create');
+
+  $(this).off('click');
+}
+
 
 function addContent(parentName, titleName, messageInfo) {
    var add = document.getElementById("" + parentName + "");
    var newdiv = document.createElement('div');
    var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
    var uniqid = randLetter + Date.now();
-   newdiv.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + "><h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + "</p></div>";
+   var officialid;
+   newdiv.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + ">"
+   officialid = $(newdiv).find("div").attr('id');
+   console.log(officialid);
+   newdiv.innerHTML=  "<div data-role=collapsible data-content-theme=e id=" + officialid + "> <h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + "</p><button class = 'replies' onclick = postReply(" + officialid + ")>Post Reply</button>";
    var id = $(newdiv).find("div").attr('id');
    console.log(id);
    add.appendChild(newdiv);
    $("#" + id ).trigger('create');
    $('div[data-role=collapsible]').collapsible();
    var newdiv2 = document.createElement('div');
-   newdiv2.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + "><h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + "</p></div>";
+   newdiv2.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + "><h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + " </p><button onclick = postReply(" + officialid + ")>Post Reply</a></div>";
    var newid = $(newdiv2).find("div").attr('id');
    var posts = document.getElementById("yourposts");
    posts.appendChild(newdiv2);
    $("#" + newid ).trigger('create');
    $('div[data-role=collapsible]').collapsible();
+   $('p[data-role=button]').button();
 
 }
 
@@ -123,7 +132,7 @@ function addContent(parentName, titleName, messageInfo) {
    				<p> <i> Babz G. writes.. </i> Hi friends, the name is Babz. I have a poodle named Monkey. Can't wait to meet all of you when I move in a month! </p>
    				<br>
    				<p> <i> Adam S. writes.. </i> No way, I have a poodle too! Do you know of any good dog parks? </p>
-   				<a data-role="button" id = "reply1">Post Reply</a>
+   				<a data-role="button" id = "reply1" class = "replies">Post Reply</a>
    			</div>
    			<div data-role="collapsible" data-content-theme="e">
    				<h3> Anyone else living in a shoebox? </h3>
@@ -225,7 +234,6 @@ function addContent(parentName, titleName, messageInfo) {
 
 		<div data-role="collapsible" data-content-theme="c" >
    			<h3>Miscellaneous</h3>
-   			<p>No posts here! Maybe you should add one :) </p>
              <div id = "misc">
             <a href="#popupInfo4" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
                <div data-role="popup" data-theme = "c" style= "max-width:400px" class="ui-corner-all" id = "popupInfo4">
@@ -245,7 +253,6 @@ function addContent(parentName, titleName, messageInfo) {
 
 		<div data-role="collapsible" data-theme="b" data-content-theme="b">
    		<h3>Your Posts</h3>
-  		 <p>You have no posts yet!</p>
        <div id = "yourposts">
 
        </div>
