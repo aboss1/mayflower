@@ -80,11 +80,8 @@ function postReply(parentName) {
   else  {
     cid = parentName; 
   }
-  console.log(cid);
-  $("#" + cid + "").find("button").remove();
-  $(this).remove();
 
-  $('#' + cid + ' p').append($('<p> <i>Adam S. writes..</i> I agree! </p><button onclick = "postReply(\'' +cid+'\')">Post Reply</button></div>')).trigger('create');
+  $('<p> <i>Adam S. writes..</i> I agree! </p>').insertBefore("#" + cid + " button");
 
   $(this).off('click');
 }
