@@ -47,10 +47,31 @@ $("#misc1").submit(function() {
    return false;
 })
 
-
-
+$("#reply1").on("click", function() {
+      $('<p> <i>Adam S. writes..</i> I agree! </p>').insertBefore("#reply1 .replies")
 })
 
+$("#reply2").on("click", function() {
+      $('<p> <i>Adam S. writes..</i> I agree! </p>').insertBefore("#reply2 .replies")
+})
+
+$("#reply3").on("click", function() {
+      $('<p> <i>Adam S. writes..</i> I agree! </p>').insertBefore("#reply3 .replies")
+})
+
+$("#reply4").on("click", function() {
+      $('<p> <i>Adam S. writes..</i> I agree! </p>').insertBefore("#reply4 .replies")
+})
+
+$("#reply5").on("click", function() {
+      $('<p> <i>Adam S. writes..</i> I agree! </p>').insertBefore("#reply5 .replies")
+})
+
+$("#reply6").on("click", function() {
+      $('<p> <i>Adam S. writes..</i> I agree! </p>').insertBefore("#reply6 .replies")
+})
+
+})
 function postReply(parentName) {
   var cid; 
   if(typeof parentName == "object") {
@@ -63,11 +84,10 @@ function postReply(parentName) {
   $("#" + cid + "").find("button").remove();
   $(this).remove();
 
-$('#' + cid + ' p').append($('<p> <i>Adam S. writes..</i> I agree! </p><buttononclick = "postReply(\'' +cid+'\')">Post Reply</button></div>')).trigger('create');
+  $('#' + cid + ' p').append($('<p> <i>Adam S. writes..</i> I agree! </p><button onclick = "postReply(\'' +cid+'\')">Post Reply</button></div>')).trigger('create');
 
   $(this).off('click');
 }
-
 
 function addContent(parentName, titleName, messageInfo) {
    var add = document.getElementById("" + parentName + "");
@@ -78,20 +98,20 @@ function addContent(parentName, titleName, messageInfo) {
    newdiv.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + ">"
    officialid = $(newdiv).find("div").attr('id');
    console.log(officialid);
-   newdiv.innerHTML=  "<div data-role=collapsible data-content-theme=e id=" + officialid + "> <h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + "</p><button class = 'replies' onclick = postReply(" + officialid + ")>Post Reply</button>";
+   newdiv.innerHTML=  "<div data-role=collapsible data-content-theme=e id=" + officialid + "> <h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + "</p><button onclick = postReply(" + officialid + ")>Post Reply</button>";
    var id = $(newdiv).find("div").attr('id');
    console.log(id);
    add.appendChild(newdiv);
    $("#" + id ).trigger('create');
    $('div[data-role=collapsible]').collapsible();
+
    var newdiv2 = document.createElement('div');
-   newdiv2.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + "><h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + " </p><button onclick = postReply(" + officialid + ")>Post Reply</a></div>";
+   newdiv2.innerHTML = "<div data-role=collapsible data-content-theme=e id=" + uniqid + "><h3>"+ titleName + "</h3><p><i>Adam S. writes.. </i>" + messageInfo + " </p><button onclick = postReply(" + officialid + ")>Post Reply</button>";
    var newid = $(newdiv2).find("div").attr('id');
    var posts = document.getElementById("yourposts");
    posts.appendChild(newdiv2);
    $("#" + newid ).trigger('create');
    $('div[data-role=collapsible]').collapsible();
-   $('p[data-role=button]').button();
 
 }
 
@@ -127,21 +147,21 @@ function addContent(parentName, titleName, messageInfo) {
                   </form>
 
                </div>
-   			<div data-role="collapsible" data-content-theme="e">
+   			<div data-role="collapsible" data-content-theme="e" id = "reply1">
    				<h3> Babz loves you all! </h3>
    				<p> <i> Babz G. writes.. </i> Hi friends, the name is Babz. I have a poodle named Monkey. Can't wait to meet all of you when I move in a month! </p>
    				<br>
    				<p> <i> Adam S. writes.. </i> No way, I have a poodle too! Do you know of any good dog parks? </p>
-   				<a data-role="button" id = "reply1" class = "replies">Post Reply</a>
+   				<a data-role="button" class = "replies">Post Reply</a>
    			</div>
-   			<div data-role="collapsible" data-content-theme="e">
+   			<div data-role="collapsible" data-content-theme="e" id = "reply2">
    				<h3> Anyone else living in a shoebox? </h3>
    				<p> <i> Christie B. writes.. </i> Hey everyone, I'm Christie! Hopefully I'll be able to meet some of you. I'm really disappointed with my apartment. Way smaller than what I thought it would be like on Craiglist.. </p>
    				<br>
    				<p> <i> Adam S. writes.. </i> I KNOW. ME TOO. At least you don't have a shared bathroom..</p>
    				<br> 
    				<p> <i> Serena B. writes.. </i> Absolute filth.</p>
-   				<a data-role="button" id = "reply2">Post Reply</a>
+   				<a data-role="button" class = "replies">Post Reply</a>
    			</div>
          </div>
 		</div>
@@ -162,12 +182,12 @@ function addContent(parentName, titleName, messageInfo) {
                   </form>
 
                </div>
-   			<div data-role="collapsible" data-content-theme="e">
+   			<div data-role="collapsible" data-content-theme="e" id = "reply3">
    				<h3>Mover Recommendations? </h3>
    				<p> <i> Babz G. writes.. </i> I'M BACK!!! Is QuikMover any good? Total procrastinator right here... </p>
    				<br>
    				<p> <i> Donny Y. writes.. </i> Nah I would use FastMove </p>
-   				<a data-role="button" id = "reply3">Post Reply</a>
+   				<a data-role="button" class = "replies">Post Reply</a>
    			</div>
       </div>
 		</div>
@@ -189,7 +209,7 @@ function addContent(parentName, titleName, messageInfo) {
                   </form>
 
                </div>
-   			<div data-role="collapsible" data-content-theme="e">
+   			<div data-role="collapsible" data-content-theme="e" id = "reply4">
    				<h3> Froyo anyone? </h3>
    				<p> <i> Babz G. writes.. </i> I really can't wait to meet you all!!! I love froyo (lol). Does anyone know good places for froyo?  </p>
    				<br>
@@ -197,7 +217,7 @@ function addContent(parentName, titleName, messageInfo) {
    				<br>
    				<p> <i> Babz G. writes.. </i> Thanks Donny, I'll do that. Can't wait to meet you! :) </p>
    				<br>
-   				<a data-role="button" id = "reply4">Post Reply</a>
+   				<a data-role="button" class = "replies">Post Reply</a>
    			</div>
 		</div>
    </div>
@@ -218,7 +238,7 @@ function addContent(parentName, titleName, messageInfo) {
                   </form>
 
                </div>
-   			<div data-role="collapsible" data-content-theme="e">
+   			<div data-role="collapsible" data-content-theme="e" id= "reply5">
    				<h3> How safe is Washington Heights? </h3>
    				<p> <i> Tuongvan L. writes.. </i> I'm thinking of moving to the area and found a pretty good deal. Do you think it's safe enough? I'm in finance and work late nights, huhu.  </p>
    				<br>
@@ -227,14 +247,14 @@ function addContent(parentName, titleName, messageInfo) {
    				<p> <i> Monica M. writes.. </i>  Totally disagree. I think it really has gone through gentrification in the past couple of years while maintaining its rich cultural roots to the Dominican community. You can check out crime rates online and see the decline. Amanda's a big wimp.  </p>
    				<br>
    				<p> <i> Amanda B. writes.. </i> :( </p>
-   				<a data-role="button" id = "reply5">Post Reply</a>
+   				<a data-role="button" class = "replies">Post Reply</a>
             </div>
          </div>
       </div>
 
-		<div data-role="collapsible" data-content-theme="c" >
+		<div data-role="collapsible" data-content-theme="c">
    			<h3>Miscellaneous</h3>
-             <div id = "misc">
+            <div id = "misc">
             <a href="#popupInfo4" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
                <div data-role="popup" data-theme = "c" style= "max-width:400px" class="ui-corner-all" id = "popupInfo4">
                   <form id = "misc1" class = "addpost">
@@ -246,6 +266,15 @@ function addContent(parentName, titleName, messageInfo) {
                      <button type="submit" data-theme="b" >Add Post</button>
                   </form>
                </div>
+               <div data-role="collapsible" data-content-theme="e" id= "reply6">
+                  <h3> Do you think my dog is cute? </h3>
+                  <p> <i> Tuongvan L. writes.. </i> I really am worried.. </p>
+                  <br>
+                  <p> <i> Amanda B. writes.. </i> So cute!!   </p>
+                  <a data-role="button" class = "replies">Post Reply</a>
+            </div>
+
+
             </div>
          
 		</div>
