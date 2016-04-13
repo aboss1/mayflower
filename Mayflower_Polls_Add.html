@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="Polls.js"></script>
 </head>
 <body>
 
@@ -19,35 +20,34 @@
 	</div
 
 	<div data-role="content">
-		<form>
-			<div class="ui-field-contain">
-	    		<label for="select-native-2">Type of Graph:</label>
-	    		<select name="select-native-2" id="select-native-2" data-mini="true">
-	        		<option value="1">Pie</option>
-	        		<option value="2">Bar</option>
-	    		</select>
-			</div>
-		</form>
-		<div data-role="fieldcontain">
-    		<label for="name">Question:</label>
-    		<input type="text" name="name" id="name" value=""  />
+		<div data-role="main" class="ui-content">
+    		<form method="post" action="Mayflower_Polls_Main.html" id = "Add_Poll_Form" onsubmit = "addPoll()" data-ajax="false">
+     			<div class="ui-field-contain">
+		        <label for="select-native-2">Type of Graph:</label>
+	    		<select name="select-native-2" id="select-native-2">
+	        		<option value="pie">Pie</option>
+	        		<option value="bar">Bar</option>
+	    		</select>       
+		        
+		        <label for="name">Question:</label>
+    			<input type="text" name="question" class="stored" id="question" value=""  />
+		        
+		        <label for="name">Option 1:</label>
+    			<input type="text" name="opt1" class="stored" id="opt1" value=""  />
+		        
+		        <label for="name">Option 2:</label>
+    			<input type="text" name="opt2" class="stored" id="opt2" value=""  />
+		        
+		      </div>
+		      <input type="submit" data-inline="true" value="Add Poll">
+		    </form>
 		</div>
-		<div data-role="fieldcontain">
-    		<label for="name">Answer 1:</label>
-    		<input type="text" name="name" id="name" value=""  />
-		</div>
-		<div data-role="fieldcontain">
-    		<label for="name">Answer 2:</label>
-    		<input type="text" name="name" id="name" value=""  />
-		</div>
-		<div data-role="controlgroup" data-type="horizontal">
-		<a data-role="button">Add New Answer</a>
-		<a data-role="button">Initiate Poll</a>
-		</div>
+	</div>
 
 	<div data-role="footer">
 		<h4>Austin -> NYC Summer '16</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
+	</div>
+</div>
+<!-- http://www.thomashardy.me.uk/using-html5-localstorage-on-a-form for this function -->
 </body>
 </html>
