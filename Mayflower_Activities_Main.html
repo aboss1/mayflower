@@ -21,7 +21,7 @@
 	<div data-role="content">
 		<!-- <p>Page content goes here.</p> -->
 		<input type="search" name="search" id="search-basic" value="Search Polls" data-mini="true" />
-		<p id ="Activity_table"> <script> displayActivities();</script></p>
+		<p id ="Activity_table"> <script>displayActivities();</script> </p>
 		<br />
 		<div data-role="controlgroup" data-type="horizontal">
 			<a href="Mayflower_Activities_Add.html" data-role="button">Add Activity</a>
@@ -31,18 +31,6 @@
 		<h4>Austin -> NYC Summer '16</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
-
-<script>
-$(document).ready(function () {
-    function init() {
-    	localStorage['eventDescription'] = "WORKED!"
-        if (window.localStorage.length > 0) {
-        	var not = "True";
-        }
-    }
-    init();
-});
-</script>
 <script>
 function join_event (AttendingNum) {
 	button_id = AttendingNum+"Button";
