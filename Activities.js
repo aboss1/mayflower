@@ -39,9 +39,12 @@ function displayActivities() {
 	for (var i = 0; i < act_list.Activities.length; i++) {
 		html += '<div id ="'+act_list.Activities[i].E_id+'" class="ui-body-d ui-content"><p>'+act_list.Activities[i].E_Description+'</p>';
 		if (act_list.Activities[i].E_Join) {
-			AttendingNum = "Attending"+act_list.Activities[i].E_id;
-			new_html = "<button onclick = \"join_event('Attending2')\" id = \"Attending2Button\">Join</button><p>Attending:<div id=\"Attending2\">5</div></p>";
+			AttendingNum = "Attending"+i;
+			button_id = AttendingNum+"Button"
+			button_tag = "#"+AttendingNum;
+			new_html = "<button onclick = \"join_event('"+AttendingNum+"')\" id = '"+button_id+"'>Join</button><p>Attending:<div id='"+AttendingNum+"'>1</div></p>";
 			html += new_html;
+			console.log(new_html);
 		}
 		html += "</div>";
 	}

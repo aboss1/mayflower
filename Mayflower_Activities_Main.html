@@ -7,15 +7,15 @@
 
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="Activities.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 <div data-role="page" id="home">
 
 	<div data-role="header">
 		<h1>Mayflower - Activities</h1>
-		<a class="ui-btn" data-rel="back">Back</a>
+		<a href = "index.html" class="ui-btn">Back</a>
 	</div
 
 	<div data-role="content">
@@ -35,17 +35,16 @@
 function join_event (AttendingNum) {
 	button_id = AttendingNum+"Button";
 	button_tag = "#" + AttendingNum;
-	console.log(button_id);
-	console.log(AttendingNum);
-
-	status = document.getElementById(button_id).textContent;
-	if (status == "Join"){ 
-		document.getElementById(button_id).textContent = "Cancel";
-		$(button_tag).text(parseInt($(button_tag).text())+1);
-	}
-	else {
-		document.getElementById(button_id).textContent = "Join";
-		$(button_tag).text(parseInt($(button_tag).text())-1);
+	if (document.getElementById(button_id) != null) { 
+		status = document.getElementById(button_id).textContent;
+		if (status == "Join"){ 
+			document.getElementById(button_id).textContent = "Cancel";
+			$(button_tag).text(parseInt($(button_tag).text())+1);
+		}
+		else {
+			document.getElementById(button_id).textContent = "Join";
+			$(button_tag).text(parseInt($(button_tag).text())-1);
+		}
 	}
 }
 </script>

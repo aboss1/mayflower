@@ -25,12 +25,12 @@
 
 	<div data-role="header">
 		<h1>Mayflower - Add Activity</h1>
-		<a class="ui-btn" data-rel="back">Back</a>
+		<a href = "Mayflower_Activities_Main.html" class="ui-btn">Back</a>
 	</div
 
 	<div data-role="content">
 		<div data-role="main" class="ui-content">
-    		<form method="post" action="Mayflower_Activities_Main.html" id = "Add_Activity_form" onsubmit = "Add_Activity()">
+    		<form method="post" action="Mayflower_Activities_Main.html" id = "Add_Activity_form" onsubmit = "Add_Activity()" data-ajax="false">
      			<div class="ui-field-contain">
 		        <label for="name">Event Title:</label>
 		        <input type="text" name="name" class="stored" id="name">       
@@ -59,32 +59,5 @@
 	</div>
 </div>
 <!-- http://www.thomashardy.me.uk/using-html5-localstorage-on-a-form for this function -->
-<script type = "text/javascript">
-$(document).ready(function () {
-    function init() {
-        if (localStorage["name"]) {
-            $('#name').val(localStorage["name"]);
-        }
-        if (localStorage["eventDescription"]) {
-            $('#eventDescription').val(localStorage["eventDescription"]);
-        }
-        if (localStorage["date"]) {
-            $('#date').val(localStorage["date"]);
-        }
-        if (localStorage["time"]) {
-            $('#time').val(localStorage["time"]);
-        }
-
-        if (localStorage["joinbutton"]) {
-        	$('#joinbutton').val(localStorage["joinbutton"]);
-        }
-    }
-    init();
-});
-
-$('.stored').change(function () {
-    localStorage[$(this).attr('name')] = $(this).val();
-});
-</script>
 </body>
 </html>
