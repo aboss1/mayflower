@@ -9,6 +9,7 @@
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="Activities.js"></script>
 </head>
 <body>
 <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css"/> 
@@ -24,12 +25,12 @@
 
 	<div data-role="header">
 		<h1>Mayflower - Add Activity</h1>
-		<a class="ui-btn" data-rel="back">Back</a>
+		<a href = "Mayflower_Activities_Main.html" class="ui-btn">Back</a>
 	</div
 
 	<div data-role="content">
 		<div data-role="main" class="ui-content">
-    		<form method="post" action="Mayflower_Activities_Main.html">
+    		<form method="post" action="Mayflower_Activities_Main.html" id = "Add_Activity_form" onsubmit = "Add_Activity()" data-ajax="false">
      			<div class="ui-field-contain">
 		        <label for="name">Event Title:</label>
 		        <input type="text" name="name" class="stored" id="name">       
@@ -51,39 +52,12 @@
 		      <input type="submit" data-inline="true" value="Add Event">
 		      </div>
 		    </form>
-  		</div>
+</div>
 		
 	<div data-role="footer">
 		<h4>Austin -> NYC Summer '16</h4>
 	</div>
 </div>
 <!-- http://www.thomashardy.me.uk/using-html5-localstorage-on-a-form for this function -->
-<script type = "text/javascript">
-$(document).ready(function () {
-    function init() {
-        if (localStorage["name"]) {
-            $('#name').val(localStorage["name"]);
-        }
-        if (localStorage["eventDescription"]) {
-            $('#eventDescription').val(localStorage["eventDescription"]);
-        }
-        if (localStorage["date"]) {
-            $('#date').val(localStorage["date"]);
-        }
-        if (localStorage["time"]) {
-            $('#time').val(localStorage["time"]);
-        }
-
-        if (localStorage["joinbutton"]) {
-        	$('#joinbutton').val(localStorage["joinbutton"]);
-        }
-    }
-    init();
-});
-
-$('.stored').change(function () {
-    localStorage[$(this).attr('name')] = $(this).val();
-});
-</script>
 </body>
 </html>
