@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="Activities.js"></script>
 </head>
 <body>
 <div data-role="page" id="home">
@@ -20,30 +21,7 @@
 	<div data-role="content">
 		<!-- <p>Page content goes here.</p> -->
 		<input type="search" name="search" id="search-basic" value="Search Polls" data-mini="true" />
-		<div data-role="tabs" id="tabs">
-  			<div data-role="navbar" id = "tabs_titles">
-    			<ul id = "tabz">
-			      <li><a href="#one">Coffee (4/25)</a></li>
-			      <li><a href="#two">Dinner (4/29)</a></li>
-			    </ul>
-  			</div>
-  			<div id="one" class="ui-body-d ui-content">
-    			<p>
-				        Let's grab coffee at the Starbucks at the Barton Creek Square mall.  See you there at 5 PM! - Andrew
-				</p>
-  			</div>
- 			<div id="two" class = "ui-body-d ui-content">
-    			<p>
-			        I've made a reservation for six at Uchiko for 6 on 4/29.  The address is 4200 N Lamar Blvd, Austin, TX 78756.  See you there! - Jess
-			    </p>  
-			    <button onclick="join_event('AttendingTwo')" id = "AttendingTwoButton">Join</button>
-			    <p>
-			    Attending:
-			    	<div id="AttendingTwo">5</div>
-			    </p>
-
-  			</div>
-		</div>
+		<p id ="Activity_table"> <script> displayActivities();</script></p>
 		<br />
 		<div data-role="controlgroup" data-type="horizontal">
 			<a href="Mayflower_Activities_Add.html" data-role="button">Add Activity</a>
@@ -53,21 +31,6 @@
 		<h4>Austin -> NYC Summer '16</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
-
-<div data-role="page" id="contacts">
-	<div data-role="header">
-		<h1>Contact Page! </h1>
-		<div data-role="navbar">
-			<ul>
-				<a href="http://google.com">Google</a>
-				<a href="#contacts" class="ui-button">Contacts</a>
-				<a href="index.html" class="button">Home</a>
-			</ul>
-		</div>
-	</div>
-	<div data-role="content">
-	</div>
-</div>
 
 <script>
 $(document).ready(function () {
@@ -80,19 +43,21 @@ $(document).ready(function () {
     init();
 });
 </script>
-
 <script>
-function join_event (two) {
-	part1 = "Attending";
-	id = part1.concat(two);
-	status = document.getElementById("AttendingTwoButton").textContent;
+function join_event (AttendingNum) {
+	button_id = AttendingNum+"Button";
+	button_tag = "#" + AttendingNum;
+	console.log(button_id);
+	console.log(AttendingNum);
+
+	status = document.getElementById(button_id).textContent;
 	if (status == "Join"){ 
-		document.getElementById("AttendingTwoButton").textContent = "Cancel";
-		$("#AttendingTwo").text(parseInt($("#AttendingTwo").text())+1);
+		document.getElementById(button_id).textContent = "Cancel";
+		$(button_tag).text(parseInt($(button_tag).text())+1);
 	}
 	else {
-		document.getElementById("AttendingTwoButton").textContent = "Join";
-		$("#AttendingTwo").text(parseInt($("#AttendingTwo").text())-1);
+		document.getElementById(button_id).textContent = "Join";
+		$(button_tag).text(parseInt($(button_tag).text())-1);
 	}
 }
 </script>

@@ -9,6 +9,7 @@
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="Activities.js"></script>
 </head>
 <body>
 <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css"/> 
@@ -29,7 +30,7 @@
 
 	<div data-role="content">
 		<div data-role="main" class="ui-content">
-    		<form method="post" action="Mayflower_Activities_Main.html">
+    		<form method="post" action="Mayflower_Activities_Main.html" id = "Add_Activity_form" onsubmit = "Add_Activity()">
      			<div class="ui-field-contain">
 		        <label for="name">Event Title:</label>
 		        <input type="text" name="name" class="stored" id="name">       
@@ -51,7 +52,7 @@
 		      <input type="submit" data-inline="true" value="Add Event">
 		      </div>
 		    </form>
-  		</div>
+</div>
 		
 	<div data-role="footer">
 		<h4>Austin -> NYC Summer '16</h4>
