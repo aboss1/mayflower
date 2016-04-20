@@ -2,14 +2,14 @@ Poll_List = localStorage.getItem("StoredPollList");
 
 if (Poll_List == null) {
    var poll_list = {
-      listName: "Doesn't Matter",
+      listName: "Pre-populated Polls",
       Polls: [
       {
-         P_Title: "Coffee vs Tea",
+         P_Title: "Hannah's Writing vs Marnie's Music",
          P_img: "pie.png",
       },
       {
-         P_Title: "Best Apartment Furnishers",
+         P_Title: "Couple Most Likely to Couple",
          P_img: "barchart.gif",
       }]
    }
@@ -25,8 +25,9 @@ localStorage.setItem("StoredPollList", poll_list_string);
 function displayPolls() {
    var html = "";
    for (var i = 0; i < poll_list.Polls.length; i++) {
-      html += '<figure><figcaption>'+poll_list.Polls[i].P_Title+'</figcaption>' +
-      '<img src="'+poll_list.Polls[i].P_img+'" style="width:200px;height:200px;float: left;"></figure>';
+      html += '<div class="wrapper">'+
+             '<img src="'+poll_list.Polls[i].P_img+'"/>'+
+             '<span class="caption">'+poll_list.Polls[i].P_Title+'</span></div>';
    }
 
    $("#yourPolls").html(html);

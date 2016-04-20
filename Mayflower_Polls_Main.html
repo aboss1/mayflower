@@ -10,6 +10,21 @@
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="Polls.js"></script>
+	<style>
+		div.wrapper {
+		    vertical-align: top;
+		    display: inline-block;
+		    text-align: center;
+		    width: 220px;
+		}
+		img {
+		    width: 200px;
+		    height: 200px;
+		}
+		.caption {
+		    display: block;
+		}
+	</style>
 </head>
 <body>
 
@@ -23,29 +38,29 @@
 	<div data-role="content">
 		<!-- <p>Page content goes here.</p> -->
 		<input type="search" name="search" id="search-basic" value="Search Polls" data-mini="true" />
-		<div data-role="collapsible-set">
+			<div data-role="collapsible-set">
 			<div data-role="collapsible" data-collapsed="false">
 			<h3>Food</h3>
-			<figure>
-				<figcaption>Ray's Coffee vs Helvetica</figcaption>
-				<img src="pie.png" alt="Food Pie" style="width:200px;height:200px;float: left;">
-			</figure>
-			<figure>
-				<figcaption>Best Sushi for Japanese Lovers</figcaption>
-				<img src="barchart.gif" alt="Food Bar" style="width:200px;height:200px;float: left;">
-			</figure>
+			<div class="wrapper">
+			    <img src="pie.png"/>
+			    <span class="caption">Ray's Coffee vs Helvetica</span>
+			</div>
+			<div class="wrapper">
+			    <img src="barchart.gif"/>
+			    <span class="caption">Best Sushi for Japanese Lovers</span>
+			</div>
 			</div>
 
 			<div data-role="collapsible" style="clear: left">
 			<h3>Moving Related</h3>
-			<figure>
-				<figcaption>Best Moving Company</figcaption>
-				<img src="barchart.gif" style="width:200px;height:200px;float: left;">
-			</figure>
-			<figure>
-				<figcaption>Best Way to Divide a Studio</figcaption>
-				<img src="barchart.gif" style="width:200px;height:200px;float: left;">
-			</figure>
+			<div class="wrapper">
+			    <img src="barchart.gif"/>
+			    <span class="caption">Best Moving Company</span>
+			</div>
+			<div class="wrapper">
+			    <img src="barchart.gif"/>
+			    <span class="caption">Best Way to Divide a Studio</span>
+			</div>
 			</div>	
 
 			<div data-role="collapsible" style="clear: left">
@@ -54,10 +69,10 @@
 			</div>		
 			<div data-role="collapsible" style="clear: left">
 			<h3>Family</h3>
-			<figure>
-				<figcaption>Invite Newly Gay Dad to Live w/Me?</figcaption>
-				<img src="pie.png" alt="Food Pie" style="width:200px;height:200px;float: left;">
-			</figure>
+			<div class="wrapper">
+			    <img src="pie.png"/>
+			    <span class="caption">Should I Invite Newly Gay Dad to Live w/Me?</span>
+			</div>
 			</div>	
 			<div data-role="collapsible" data-theme="b" data-content-theme="b" style="clear: left">
    				<h3>Your Polls</h3>
