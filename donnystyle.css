@@ -6,6 +6,11 @@
     background: #66CCFF !important;
 }
 
+.ui-page {
+	padding-left: 30px;
+	background: #E8E8E8 !important
+}
+
 .ui-icon-home-polls {
 	background-image: url("home-polls.png");
 	height: 120px !important;
