@@ -5,11 +5,11 @@ if (Poll_List == null) {
       listName: "Doesn't Matter",
       Polls: [
       {
-         P_Title: "Coffee",
+         P_Title: "Coffee vs Tea",
          P_img: "pie.png",
       },
       {
-         P_Title: "Coffee or tea",
+         P_Title: "Best Apartment Furnishers",
          P_img: "barchart.gif",
       }]
    }
