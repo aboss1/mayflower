@@ -5,3 +5,43 @@
 .ui-page .ui-footer {
     background: #66CCFF !important;
 }
+
+.ui-icon-home-polls {
+	background-image: url("home-polls.png");
+	height: 120px !important;
+    width: 90px !important;
+    text-align: right;
+    line-height: 0px;
+}
+
+.ui-icon-home-maps {
+	background-image: url("home-maps.png");
+	height: 120px !important;
+    width: 90px !important;
+    text-align: right;
+    line-height: 0px;
+}
+
+.ui-icon-home-activities {
+	background-image: url("home-activities.png");
+	height: 120px !important;
+    width: 90px !important;
+    text-align: right;
+    line-height: 0px;
+}
+
+.ui-icon-home-diary {
+	background-image: url("home-diary.png");
+	height: 120px !important;
+    width: 90px !important;
+    text-align: right;
+    line-height: 0px;
+}
+
+.ui-icon-home-shipmates {
+	background-image: url("home-shipmates.png");
+	height: 120px !important;
+    width: 90px !important;
+    text-align: right;
+    line-height: 0px;
+}

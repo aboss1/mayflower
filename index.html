@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Home Page</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="Activities.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-<style>
-	explanation{
-		display: inline-block;
-	}
-	left{
-		float: left;
-	}
-	right{
-		float: right;
-	}
-</style>
-</head>
-<body>
-<!--<link rel="stylesheet" href="jquery.ui.datepicker.mobile.css"/> 
-	<script src="jQuery.ui.datepicker.js"></script>
-	<script src="jquery.ui.datepicker.mobile.js"></script>!-->
-
-<div data-role="page" id="home">
-
-	<div data-role="header">
-		<h1>Mayflower - Home</h1>
-	</div>
-	<div data-role="explanation">
-		<div class="explanation">
-		<div class="right">
-			<img src="sampleProfPic.jpeg" width="200" height="200">
+	<head>
+		<title>Home Page</title>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="donnystyle.css" />
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="Activities.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		
+		<style>
+			explanation{
+				display: inline-block;
+			}
+			left{
+				float: left;
+			}
+			right{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<div data-role="page" id="home">
+	
+		<div data-role="header">
+			<h1>Mayflower - Home</h1>
 		</div>
-		<div class="left">
-			<h2>Welcome Aboard, Alex!</h2>
-			<h3>Check out your recent updates</h3>
+		<div data-role="explanation">
+			<div class="explanation">
+			<div class="right">
+				<img src="sampleProfPic.jpeg" width="200" height="200">
+			</div>
+			<div class="left">
+				<h2>Welcome Aboard, Alex!</h2>
+				<h3>Check out your recent updates</h3>
+			</div>
+			</div>
 		</div>
+	
+		<div data-role="updates">
+			<div id="updates ticker" style="overflow: scroll; height: 200px; width: 500px">
+	      		<ul data-role="listview">
+	      			<li>Amanda B posted to the Ship Diary: AVOID AT ALL COSTS</li>
+	      			<li>Andrew R added an Activity: Coffee 4/25</li>
+	      			<li>Donny Y placed a settlement on the map</li>
+	      			<li>Monica M posted to the Ship Diary: Totally disagree. Amanda's a big wimp.</li>
+	      			<li>Jess E added an Activity: Dinner 4/29</li>
+	      			<li>Donny Y just added a Roommate Profile. Check if he's a match!</li>
+	      			<li>Amanda B posted to Ship Diary: :(</li>
+	      			<li>A new Food poll was added. Particpate now!</li>
+	      		</ul>
+	 		</div>
 		</div>
-	</div>
-
-	<div data-role="updates">
-		<div id="updates ticker" style="overflow: scroll; height: 200px; width: 500px">
-      		<ul data-role="listview">
-      			<li>Amanda B posted to the Ship Diary: AVOID AT ALL COSTS</li>
-      			<li>Andrew R added an Activity: Coffee 4/25</li>
-      			<li>Donny Y placed a settlement on the map</li>
-      			<li>Monica M posted to the Ship Diary: Totally disagree. Amanda's a big wimp.</li>
-      			<li>Jess E added an Activity: Dinner 4/29</li>
-      			<li>Donny Y just added a Roommate Profile. Check if he's a match!</li>
-      			<li>Amanda B posted to Ship Diary: :(</li>
-      			<li>A new Food poll was added. Particpate now!</li>
-      		</ul>
- 		</div>
-	</div>
-
-	<div data-role="dashboard">
-		<h3>Explore the Ship!</h3>
-		<a href="Mayflower_Activities_Main.html" data-role="button" data-inline="true" data-ajax="false">Activites</a>
-		<a href="Mayflower_Polls_Main.html" data-role="button" data-inline="true" data-ajax="false">Polls</a>
-		<a href="Mayflower_Maps_Main.html" data-role="button" data-inline="true">Maps</a>
-		<br />
-
-		<a href="Mayflower_Roommates_Main.html" data-role="button" data-inline="true">Shipmates</a>
-		<a href="Mayflower_MessageBoard_Main.html" data-role="button" data-inline="true">Ship Diary</a>
-		<br />
-		<br />
-
-		<a href="Mayflower_Polls_Add.html" data-role="button" data-inline="true">Add Poll</a>
-		<a href="Mayflower_Maps_Add.html" data-role="button" data-inline="true">Add Map</a>
-		<a href="Mayflower_Activities_Add.html" data-role="button" data-inline="true">Add Activity</a>
-	</div>
-
-	<div data-role="footer">
-		<h4>Austin -> NYC Summer '16</h4>
-	</div><!-- /footer -->
-
-</div>
-
-</body>
+	
+		<div data-role="dashboard">
+			<h3>Explore the Ship!</h3>
+			<a href="Mayflower_Activities_Main.html" data-role="button" data-icon="home-activities" data-inline="true" data-ajax="false">Activites</a>
+			<a href="Mayflower_Polls_Main.html" data-role="button" data-icon="home-polls" data-inline="true" data-ajax="false">Polls</a>
+			<a href="Mayflower_Maps_Main.html" data-role="button" data-icon="home-maps" data-inline="true">Maps</a>
+			<br />
+	
+			<a href="Mayflower_Roommates_Main.html" data-role="button" data-icon="home-shipmates" data-inline="true">Shipmates</a>
+			<a href="Mayflower_MessageBoard_Main.html" data-role="button" data-icon="home-diary" data-inline="true">Ship Diary</a>
+			<br />
+			<br />
+	
+			<a href="Mayflower_Polls_Add.html" data-role="button" data-icon="plus" data-iconpos="bottom" data-inline="true">Add Poll</a>
+			<a href="Mayflower_Activities_Add.html" data-role="button" data-icon="plus" data-iconpos="bottom" data-inline="true">Add Activity</a>
+		</div>
+	
+		<div data-role="footer">
+			<h4>Austin -> NYC Summer '16</h4>
+		</div><!-- /footer -->
+	
+		</div>
+	
+	</body>
 </html>
