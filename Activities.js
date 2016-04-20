@@ -6,19 +6,21 @@ if (Activity_List == null) {
 		Activities: [
 		{
 			E_Title: "Coffee",
-			E_Description: "Let's grab coffee at the Starbucks at the Barton Creek Square mall.  See you there at 5 PM! - Andrew",
+			E_Description: "Let's grab coffee at the Starbucks at the Barton Creek Square mall.  See you there at 5 PM!",
 			E_Date: "2016-04-25",
 			E_Time: "5:00:PM",
 			E_Join: false,
 			E_id: 1,
+			E_host: "Hannah",
 		},
 		{
 			E_Title: "Dinner",
-			E_Description: "I've made a reservation for six at Uchiko.  The address is 4200 N Lamar Blvd, Austin, TX 78756.  See you there! - Jess",
+			E_Description: "I've made a reservation for six at Uchiko.  The address is 4200 N Lamar Blvd, Austin, TX 78756.  See you there!",
 			E_Date: "2016-04-29",
 			E_Time: "6:00:PM",
 			E_Join: true,
 			E_id: 2,
+			E_host: "Elijah",
 		}]
 	}
 }
@@ -46,6 +48,7 @@ function displayActivities() {
 			html += new_html;
 			console.log(new_html);
 		}
+		html += "<div> Host:"+act_list.Activities[i].E_host+"</div>";
 		html += "</div>";
 	}
 	html += "</div>";
@@ -62,7 +65,8 @@ function Add_Activity() {
 	E_Time = document.getElementById("time").value;
 	E_Join = $("#joinbutton").is(":checked");
 	E_id = act_list.Activities.length + 1;
-	act_list.Activities.push({E_Title: E_Title, E_Description: E_Description, E_Date: E_Date, E_Time: E_Time, E_Join: E_Join,E_id: E_id});
+	E_host = "Shoshanna Shapiro";
+	act_list.Activities.push({E_Title: E_Title, E_Description: E_Description, E_Date: E_Date, E_Time: E_Time, E_Join: E_Join,E_id: E_id, E_host: E_host});
 	act_list_string = JSON.stringify(act_list);
 	localStorage.setItem("StoredActivityList", act_list_string);
 }
