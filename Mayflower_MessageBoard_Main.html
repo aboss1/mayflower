@@ -23,11 +23,12 @@
   <div data-role="content">
 
     <!-- Meet Shipmates Thread -->
-    <div data-role="collapsible" data-theme="a" data-content-theme="a">
+    <div data-role="collapsible" data-theme="e" data-content-theme="e" data-collapsed-icon="arrow-r">
         <h3>Meet your Shipmates!</h3>
             <div id = "shipmates">
         <a href="#popupInfo" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
                <div data-role="popup" data-theme = "e" data-overlay-theme = "a" class="ui-corner-all" id = "popupInfo">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                   <form id = "shipmates1" class = "addpost">
                      <h3>Create a New Post</h3>
                       <label for="un">Name of Post:</label>
@@ -58,11 +59,12 @@
     </div>
 
     <!-- Moving Logistics Thread -->
-    <div data-role="collapsible" data-content-theme="c">
+    <div data-role="collapsible" data-content-theme="c" data-collapsed-icon="arrow-r">
         <h3>Moving Logistics</h3>
             <div id = "moving">
             <a href="#popupInfo1" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
         <div data-role="popup" data-theme = "e" data-overlay-theme = "a" style= "max-width:400px" class="ui-corner-all" id = "popupInfo1">
+                  <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                   <form id = "moving1" class = "addpost">
                      <h3>Create a New Post</h3>
                       <label for="un1">Name of Post:</label>
@@ -85,11 +87,12 @@
 
 
     <!-- Potential Meetups Thread -->
-    <div data-role="collapsible" data-content-theme="c">
+    <div data-role="collapsible" data-content-theme="c" data-collapsed-icon="arrow-r">
         <h3>Potential Meetups</h3>
          <div id = "pmeetups">
             <a href="#popupInfo2" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
                <div data-role="popup" data-theme = "e" data-overlay-theme = "a" style= "max-width:400px" class="ui-corner-all" id = "popupInfo2">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                   <form id = "pmeetups1" class = "addpost">
                      <h3>Create a New Post</h3>
                       <label for="un2">Name of Post:</label>
@@ -114,11 +117,12 @@
    </div>
 
     <!-- Neighborhood Questions Thread -->
-    <div data-role="collapsible" data-theme="c">
+    <div data-role="collapsible" data-theme="c" data-collapsed-icon="arrow-r">
         <h3>Neighborhood Questions</h3>
          <div id = "neighbor">
             <a href="#popupInfo3" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
                <div data-role="popup" data-theme = "e" data-overlay-theme = "a" style= "max-width:400px" class="ui-corner-all" id = "popupInfo3">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                   <form id = "neighbor1" class = "addpost">
                      <h3>Create a New Post</h3>
                       <label for="un3">Name of Post:</label>
@@ -144,11 +148,12 @@
       </div>
 
     <!-- Misc. Thread -->
-    <div data-role="collapsible" data-content-theme="c">
+    <div data-role="collapsible" data-content-theme="c" data-collapsed-icon="arrow-r">
         <h3>Miscellaneous</h3>
             <div id = "misc">
             <a href="#popupInfo4" data-rel="popup"  data-role="button"  data-position-to = "window" >Add Post</a>
                <div data-role="popup" data-theme = "e" data-overlay-theme = "a" style= "max-width:400px" class="ui-corner-all" id = "popupInfo4">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                   <form id = "misc1" class = "addpost">
                      <h3>Create a New Post</h3>
                       <label for="un4">Name of Post:</label>
@@ -195,30 +200,35 @@ $(document).ready(function() {
      var title = $("#un").val();
      var content = $("#pw").val();
      addContent("shipmates", title, content); 
+     $("#popupInfo").popup("close");
      return false;
   })
   $("#pmeetups1").submit(function() {
      var title = $("#un2").val();
      var content = $("#pw2").val();
      addContent("pmeetups", title, content); 
+     $("#popupInfo1").popup("close");
      return false;
   })
   $("#moving1").submit(function() {
      var title = $("#un1").val();
      var content = $("#pw1").val();
      addContent("moving", title, content); 
+     $("#popupInfo2").popup("close");
      return false;
   })
   $("#neighbor1").submit(function() {
      var title = $("#un3").val();
      var content = $("#pw3").val();
      addContent("neighbor", title, content); 
+     $("#popupInfo3").popup("close");
      return false;
   })
   $("#misc1").submit(function() {
      var title = $("#un4").val();
      var content = $("#pw4").val();
      addContent("misc", title, content); 
+     $("#popupInfo4").popup("close");
      return false;
   })
   // functionality for replies for pre-made posts 
